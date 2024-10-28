@@ -1,7 +1,7 @@
 ///<reference types="cypress"/>
 
 beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+    cy.visit('produtos')
 });
 
 describe('Funcionalidade: Produtos', () => {
