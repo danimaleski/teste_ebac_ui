@@ -22,7 +22,7 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
     });
 
-    it.only('Deve completar o cadastro com sucesso - Usando variáveis', () => {
+    it('Deve completar o cadastro com sucesso - Usando variáveis', () => {
         var nome = faker.person.firstName()
         var email = faker.internet.email(nome) // para criar então o email com o mesmo nome da pessoa. 
         var sobrenome = faker.person.lastName()
@@ -35,8 +35,18 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
         cy.get('#account_first_name').type(nome)
         cy.get('#account_last_name').type(sobrenome)
-        //cy.wait(5000) só para verificar alguma informação com mais calma caso queira. Mas não é viável nos tstes. 
         cy.get('.woocommerce-Button').click()
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+    });
+
+    it.only('Deve completar o cadastro com sucesso - usando comandos customizados', () => {
+        var nome = faker.person.firstName()
+        var email = faker.internet.email(nome) 
+        var sobrenome = faker.person.lastName()
+
+        cy.preCadastro(email, 'teste123', nome, sobrenome) //pegando faker com variaveis
+
+        //cy.preCadastro(faker.internet.email(), 'teste123', faker.person.firstName(), faker.person.lastName()) //pegando o faker somente
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
     });
 });

@@ -41,7 +41,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, dani.teste')
     })
 
-    it.only('Deve fazer login com sucesso - Usando Fixture', () => { //utilizando funções nativas do Cypress
+    it('Deve fazer login com sucesso - Usando Fixture', () => { //utilizando funções nativas do Cypress
         cy.fixture('perfil').then(dados => {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha, {log: false}) // log false serve para esconder o dado no video de execuçao do cypress
@@ -49,4 +49,14 @@ describe('Funcionalidade: Login', () => {
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, dani.teste')
         })
     })
+
+    it.only('Deve fazer login com sucesso usando comandos customizados', () => {
+        //cy.login('dani.teste@teste.com.br', 'teste@123') //usando dados diretos
+        //cy.login(perfil.usuario, perfil.senha) //usando massa de dados
+        cy.fixture('perfil').then(dados => { //usando fixtures
+            cy.login(dados.usuario, dados.senha)
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, dani.teste')
+        })
+        
+    });
 })
