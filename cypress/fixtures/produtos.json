@@ -1,0 +1,36 @@
+[
+    {
+        "nomeProduto": "Autumn Pullie",
+        "tamanho": "XS",
+        "cor": "Green",
+        "quantidade": 2
+    },
+
+    {
+        "nomeProduto": "Torque Power Short",
+        "tamanho": "33",
+        "cor": "Gray",
+        "quantidade": 4
+    },
+
+    {
+        "nomeProduto": "Celeste Sports Bra",
+        "tamanho": "M",
+        "cor": "Yellow",
+        "quantidade": 5
+    },
+
+    {
+        "nomeProduto": "Zeppelin Yoga Pant",
+        "tamanho": "36",
+        "cor": "Blue",
+        "quantidade": 1
+    },
+
+    {
+        "nomeProduto": "Cassia Funnel Sweatshirt",
+        "tamanho": "S",
+        "cor": "White",
+        "quantidade": 3
+    }
+]

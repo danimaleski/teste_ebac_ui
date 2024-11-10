@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Funcionalidade: Detalhes da conta', () => {
+describe('Funcionalidade: Detalhes da conta', () => { // para entrar em uma parte do site que precise logar, usando comandos customizados
 
     beforeEach(() => {
         cy.visit('minha-conta/edit-account')
