@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                git branch: 'main', url: 'https://github.com/EBAC-QE/ebac-cypress-samples.git'
+                git branch: 'main', url: 'https://github.com/danimaleski/teste_ebac_ui.git'
                 sh 'npm install'
             }
         }
