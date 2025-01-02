@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Setup') {
+        stage('Instalação') {
             steps {
                 git branch: 'main', url: 'https://github.com/danimaleski/teste_ebac_ui.git'
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
-        stage('Test') {
+        stage('Testes') {
             steps {
                 sh 'NO_COLOR=1 npm test'
             }
